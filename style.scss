@@ -151,150 +151,164 @@ body {
 }
 
 // colors
-$bg: #fdfefe;
-$black: #363130;
-$gray: #dfe7ea;
-$red: #f3542f;
-$dark-red: #6c301e;
+$bg: #444444;
+$black: #444444;
+$gray: #aaaaaa;
 
 // shapes
 $rouned: 40px;
-$edge: 20px;
 $circle: 50%;
 
 .digital-clock {
   // .digital-clock__box
   &__box {
     position: relative;
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
 
     background: none;
     display: block;
   }
-  // .digital-clock__outter-clock
-  &__outter-clock {
-    position: absolute;
-    top: 42%;
-    left: 10%;
-    width: 80%;
-    height: 50%;
-    background: $gray;
-    border: 8px solid $black;
-    border-radius: $rouned;
-    z-index: 2;
-  }
+
   // .digital-clock__inner-clock
   &__inner-clock {
-    position: absolute;
-    top: 15%;
-    left: 5%;
-    width: 90%;
-    height: 70%;
-    background: $black;
-    border-radius: $edge;
+    width: 100%;
+    height: 100%;
+    background: #ebfaff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__left {
+  }
+  &__right {
   }
   // .digital-clock__am
   &__am {
-    position: absolute;
-    top: 25%;
-    left: 5%;
-    width: 20%;
-    height: 20%;
     color: $bg;
     line-height: 1.5;
-    padding-left: 10%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     &::after {
       content: "AM";
     }
   }
   // .digital-clock__am-dot
   &__am-dot {
-    position: absolute;
-    left: 20%;
-    top: 24%;
     width: 10px;
     height: 10px;
-    background: $dark-red;
     border-radius: $circle;
   }
   // .digital-clock__pm
   &__pm {
-    position: absolute;
-    top: 55%;
-    left: 5%;
-    width: 20%;
-    height: 20%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     color: $bg;
     line-height: 1.5;
-    padding-left: 10%;
     &::after {
       content: "PM";
     }
   }
   // .digital-clock__pm-dot
   &__pm-dot {
-    position: absolute;
-    left: 20%;
-    top: 24%;
     width: 10px;
     height: 10px;
-    background: $dark-red;
     border-radius: $circle;
   }
   // .digital-clock__time
   &__time {
-    position: absolute;
-    top: 35%;
-    left: 26%;
-    width: 70%;
     padding: 10px 10px;
-    font-size: 3rem;
     letter-spacing: 10px;
-    color: $red;
+    color: $black;
     @media (max-width: 568px) {
-      left: 28%;
     }
   }
   // .digital-clock__day
   &__day {
-    position: absolute;
-    top: 10%;
-    left: 26%;
-    width: 70%;
     padding: 10px 10px;
-    font-size: 1rem;
     letter-spacing: 5px;
-    color: $red;
+    color: $black;
+    text-align: center;
     @media (max-width: 568px) {
-      font-size: 0.8rem;
       letter-spacing: 2px;
-      left: 28%;
-      top: 15%;
     }
   }
-  // .digital-clock__leg-left
-  &__leg-left {
-    position: absolute;
-    bottom: 0;
-    left: 20%;
-    width: 4%;
-    height: 20%;
-    background: $black;
-    border-radius: $rouned;
-  }
-  // .digital-clock__leg-right
-  &__leg-right {
-    position: absolute;
-    bottom: 0;
-    right: 20%;
-    width: 4%;
-    height: 20%;
-    background: $black;
-    border-radius: $rouned;
+}
+@supports (font-size: clamp(1rem, 0.8043478261rem + 0.8695652174vw, 1.5rem)) {
+  .digital-clock__right {
+    font-size: clamp(1rem, 0.8043478261rem + 0.8695652174vw, 1.5rem);
   }
 }
 
+@supports not (
+  font-size: clamp(1rem, 0.8043478261rem + 0.8695652174vw, 1.5rem)
+) {
+  .digital-clock__right {
+    font-size: calc(1rem + 0.5 * (100vw - 22.5rem) / 57.5);
+  }
+}
+@supports (gap: clamp(0.625rem, -0.3532608696rem + 4.347826087vw, 3.125rem)) {
+  .digital-clock__inner-clock {
+    gap: clamp(0.625rem, -0.3532608696rem + 4.347826087vw, 3.125rem);
+  }
+}
+
+@supports not (
+  gap: clamp(0.625rem, -0.3532608696rem + 4.347826087vw, 3.125rem)
+) {
+  .digital-clock__inner-clock {
+    gap: calc(0.625rem + 2.5 * (100vw - 22.5rem) / 57.5);
+  }
+}
+
+@supports (
+  font-size: clamp(3.75rem, 1.0597826087rem + 11.9565217391vw, 10.625rem)
+) {
+  .digital-clock__time {
+    font-size: clamp(3.75rem, 1.0597826087rem + 11.9565217391vw, 10.625rem);
+  }
+}
+
+@supports not (
+  font-size: clamp(3.75rem, 1.0597826087rem + 11.9565217391vw, 10.625rem)
+) {
+  .digital-clock__time {
+    font-size: calc(3.75rem + 6.875 * (100vw - 22.5rem) / 57.5);
+  }
+}
+
+@supports (
+  margin-bottom: clamp(1.25rem, 0.5163043478rem + 3.2608695652vw, 3.125rem)
+) {
+  .digital-clock__am {
+    margin-bottom: clamp(1.25rem, 0.5163043478rem + 3.2608695652vw, 3.125rem);
+  }
+}
+
+@supports not (
+  margin-bottom: clamp(1.25rem, 0.5163043478rem + 3.2608695652vw, 3.125rem)
+) {
+  .digital-clock__am {
+    margin-bottom: calc(1.25rem + 1.875 * (100vw - 22.5rem) / 57.5);
+  }
+}
+@supports (
+  font-size: clamp(1.125rem, 0.5869565217rem + 2.3913043478vw, 2.5rem)
+) {
+  .digital-clock__day {
+    font-size: clamp(1.125rem, 0.5869565217rem + 2.3913043478vw, 2.5rem);
+  }
+}
+
+@supports not (
+  font-size: clamp(1.125rem, 0.5869565217rem + 2.3913043478vw, 2.5rem)
+) {
+  .digital-clock__day {
+    font-size: calc(1.125rem + 1.375 * (100vw - 22.5rem) / 57.5);
+  }
+}
 .alert {
   width: 100vw;
   height: 100vh;
@@ -304,8 +318,6 @@ $circle: 50%;
   background: #000000;
   // .alert__container
   &__container {
-    max-width: 600px;
-    max-height: 400px;
     width: 100%;
     height: 100%;
     border: 5px solid #fff;
@@ -314,8 +326,6 @@ $circle: 50%;
     letter-spacing: 3px;
     text-align: center;
     @media (max-width: 768px) {
-      width: 100%;
-      margin: 0px 30px;
       padding: 10px;
     }
   }

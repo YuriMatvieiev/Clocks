@@ -40,11 +40,11 @@ function getTime() {
     .padStart(2, "0")}`;
 
   if (hour < 12) {
-    amElement.style.background = "#F3542F";
-    pmElement.style.background = "#6C301E";
+    amElement.style.background = "#dd1b1b";
+    pmElement.style.background = "#5d5f5f";
   } else {
-    pmElement.style.background = "#F3542F";
-    amElement.style.background = "#6C301E";
+    pmElement.style.background = "#dd1b1b";
+    amElement.style.background = "#5d5f5f";
   }
 
   return timeText;

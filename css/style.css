@@ -191,127 +191,130 @@ body {
 
 .digital-clock__box {
   position: relative;
-  width: 600px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   background: none;
   display: block;
 }
-.digital-clock__outter-clock {
-  position: absolute;
-  top: 42%;
-  left: 10%;
-  width: 80%;
-  height: 50%;
-  background: #dfe7ea;
-  border: 8px solid #363130;
-  border-radius: 40px;
-  z-index: 2;
-}
 .digital-clock__inner-clock {
-  position: absolute;
-  top: 15%;
-  left: 5%;
-  width: 90%;
-  height: 70%;
-  background: #363130;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  background: #ebfaff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .digital-clock__am {
-  position: absolute;
-  top: 25%;
-  left: 5%;
-  width: 20%;
-  height: 20%;
-  color: #fdfefe;
+  color: #444444;
   line-height: 1.5;
-  padding-left: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
 }
 .digital-clock__am::after {
   content: "AM";
 }
 .digital-clock__am-dot {
-  position: absolute;
-  left: 20%;
-  top: 24%;
   width: 10px;
   height: 10px;
-  background: #6c301e;
   border-radius: 50%;
 }
 .digital-clock__pm {
-  position: absolute;
-  top: 55%;
-  left: 5%;
-  width: 20%;
-  height: 20%;
-  color: #fdfefe;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  color: #444444;
   line-height: 1.5;
-  padding-left: 10%;
 }
 .digital-clock__pm::after {
   content: "PM";
 }
 .digital-clock__pm-dot {
-  position: absolute;
-  left: 20%;
-  top: 24%;
   width: 10px;
   height: 10px;
-  background: #6c301e;
   border-radius: 50%;
 }
 .digital-clock__time {
-  position: absolute;
-  top: 35%;
-  left: 26%;
-  width: 70%;
   padding: 10px 10px;
-  font-size: 3rem;
   letter-spacing: 10px;
-  color: #f3542f;
-}
-@media (max-width: 568px) {
-  .digital-clock__time {
-    left: 28%;
-  }
+  color: #444444;
 }
 .digital-clock__day {
-  position: absolute;
-  top: 10%;
-  left: 26%;
-  width: 70%;
   padding: 10px 10px;
-  font-size: 1rem;
   letter-spacing: 5px;
-  color: #f3542f;
+  color: #444444;
+  text-align: center;
 }
 @media (max-width: 568px) {
   .digital-clock__day {
-    font-size: 0.8rem;
     letter-spacing: 2px;
-    left: 28%;
-    top: 15%;
   }
 }
-.digital-clock__leg-left {
-  position: absolute;
-  bottom: 0;
-  left: 20%;
-  width: 4%;
-  height: 20%;
-  background: #363130;
-  border-radius: 40px;
-}
-.digital-clock__leg-right {
-  position: absolute;
-  bottom: 0;
-  right: 20%;
-  width: 4%;
-  height: 20%;
-  background: #363130;
-  border-radius: 40px;
-}
 
+@supports (font-size: clamp(1rem, 0.8043478261rem + 0.8695652174vw, 1.5rem)) {
+  .digital-clock__right {
+    font-size: clamp(1rem, 0.8043478261rem + 0.8695652174vw, 1.5rem);
+  }
+}
+@supports not (font-size: clamp(1rem, 0.8043478261rem + 0.8695652174vw, 1.5rem)) {
+  .digital-clock__right {
+    font-size: calc(1rem + 0.5 * (100vw - 22.5rem) / 57.5);
+  }
+}
+@supports (gap: clamp(0.625rem, -0.3532608696rem + 4.347826087vw, 3.125rem)) {
+  .digital-clock__inner-clock {
+    gap: clamp(0.625rem, -0.3532608696rem + 4.347826087vw, 3.125rem);
+  }
+}
+@supports not (gap: clamp(0.625rem, -0.3532608696rem + 4.347826087vw, 3.125rem)) {
+  .digital-clock__inner-clock {
+    gap: calc(0.625rem + 2.5 * (100vw - 22.5rem) / 57.5);
+  }
+}
+@supports (font-size: clamp(3.75rem, 1.0597826087rem + 11.9565217391vw, 10.625rem)) {
+  .digital-clock__time {
+    font-size: clamp(3.75rem, 1.0597826087rem + 11.9565217391vw, 10.625rem);
+  }
+}
+@supports not (font-size: clamp(3.75rem, 1.0597826087rem + 11.9565217391vw, 10.625rem)) {
+  .digital-clock__time {
+    font-size: calc(3.75rem + 6.875 * (100vw - 22.5rem) / 57.5);
+  }
+}
+@supports (margin-bottom: clamp(1.25rem, 0.5163043478rem + 3.2608695652vw, 3.125rem)) {
+  .digital-clock__am {
+    margin-bottom: clamp(1.25rem, 0.5163043478rem + 3.2608695652vw, 3.125rem);
+  }
+}
+@supports not (margin-bottom: clamp(1.25rem, 0.5163043478rem + 3.2608695652vw, 3.125rem)) {
+  .digital-clock__am {
+    margin-bottom: calc(1.25rem + 1.875 * (100vw - 22.5rem) / 57.5);
+  }
+}
+@supports (font-size: clamp(1.125rem, 0.5869565217rem + 2.3913043478vw, 2.5rem)) {
+  .digital-clock__day {
+    font-size: clamp(1.125rem, 0.5869565217rem + 2.3913043478vw, 2.5rem);
+  }
+}
+@supports not (font-size: clamp(1.125rem, 0.5869565217rem + 2.3913043478vw, 2.5rem)) {
+  .digital-clock__day {
+    font-size: calc(1.125rem + 1.375 * (100vw - 22.5rem) / 57.5);
+  }
+}
 .alert {
   width: 100vw;
   height: 100vh;
@@ -327,8 +330,6 @@ body {
   background: #000000;
 }
 .alert__container {
-  max-width: 600px;
-  max-height: 400px;
   width: 100%;
   height: 100%;
   border: 5px solid #fff;
@@ -339,8 +340,6 @@ body {
 }
 @media (max-width: 768px) {
   .alert__container {
-    width: 100%;
-    margin: 0px 30px;
     padding: 10px;
   }
 }
