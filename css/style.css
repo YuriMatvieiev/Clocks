@@ -219,7 +219,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10px;
+  gap: 20px;
+}
+@media (max-width: 568px) {
+  .digital-clock__am {
+    gap: 10px;
+  }
 }
 .digital-clock__am::after {
   content: "AM";
@@ -236,9 +241,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10px;
+  gap: 20px;
   color: #444444;
   line-height: 1.5;
+}
+@media (max-width: 568px) {
+  .digital-clock__pm {
+    gap: 10px;
+  }
 }
 .digital-clock__pm::after {
   content: "PM";
@@ -265,14 +275,14 @@ body {
   }
 }
 
-@supports (font-size: clamp(1rem, 0.8043478261rem + 0.8695652174vw, 1.5rem)) {
+@supports (font-size: clamp(1rem, 0.5597826087rem + 1.9565217391vw, 2.125rem)) {
   .digital-clock__right {
-    font-size: clamp(1rem, 0.8043478261rem + 0.8695652174vw, 1.5rem);
+    font-size: clamp(1rem, 0.5597826087rem + 1.9565217391vw, 2.125rem);
   }
 }
-@supports not (font-size: clamp(1rem, 0.8043478261rem + 0.8695652174vw, 1.5rem)) {
+@supports not (font-size: clamp(1rem, 0.5597826087rem + 1.9565217391vw, 2.125rem)) {
   .digital-clock__right {
-    font-size: calc(1rem + 0.5 * (100vw - 22.5rem) / 57.5);
+    font-size: calc(1rem + 1.125 * (100vw - 22.5rem) / 57.5);
   }
 }
 @supports (gap: clamp(0.625rem, -0.3532608696rem + 4.347826087vw, 3.125rem)) {
@@ -285,14 +295,14 @@ body {
     gap: calc(0.625rem + 2.5 * (100vw - 22.5rem) / 57.5);
   }
 }
-@supports (font-size: clamp(3.75rem, 1.0597826087rem + 11.9565217391vw, 10.625rem)) {
+@supports (font-size: clamp(3.75rem, 0.3260869565rem + 15.2173913043vw, 12.5rem)) {
   .digital-clock__time {
-    font-size: clamp(3.75rem, 1.0597826087rem + 11.9565217391vw, 10.625rem);
+    font-size: clamp(3.75rem, 0.3260869565rem + 15.2173913043vw, 12.5rem);
   }
 }
-@supports not (font-size: clamp(3.75rem, 1.0597826087rem + 11.9565217391vw, 10.625rem)) {
+@supports not (font-size: clamp(3.75rem, 0.3260869565rem + 15.2173913043vw, 12.5rem)) {
   .digital-clock__time {
-    font-size: calc(3.75rem + 6.875 * (100vw - 22.5rem) / 57.5);
+    font-size: calc(3.75rem + 8.75 * (100vw - 22.5rem) / 57.5);
   }
 }
 @supports (margin-bottom: clamp(1.25rem, 0.5163043478rem + 3.2608695652vw, 3.125rem)) {
@@ -305,14 +315,14 @@ body {
     margin-bottom: calc(1.25rem + 1.875 * (100vw - 22.5rem) / 57.5);
   }
 }
-@supports (font-size: clamp(1.125rem, 0.5869565217rem + 2.3913043478vw, 2.5rem)) {
+@supports (font-size: clamp(1.125rem, 0.3423913043rem + 3.4782608696vw, 3.125rem)) {
   .digital-clock__day {
-    font-size: clamp(1.125rem, 0.5869565217rem + 2.3913043478vw, 2.5rem);
+    font-size: clamp(1.125rem, 0.3423913043rem + 3.4782608696vw, 3.125rem);
   }
 }
-@supports not (font-size: clamp(1.125rem, 0.5869565217rem + 2.3913043478vw, 2.5rem)) {
+@supports not (font-size: clamp(1.125rem, 0.3423913043rem + 3.4782608696vw, 3.125rem)) {
   .digital-clock__day {
-    font-size: calc(1.125rem + 1.375 * (100vw - 22.5rem) / 57.5);
+    font-size: calc(1.125rem + 2 * (100vw - 22.5rem) / 57.5);
   }
 }
 .alert {
